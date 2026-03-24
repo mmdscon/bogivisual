@@ -11,8 +11,8 @@ export default function Page() {
         <div className="mx-auto max-w-6xl flex items-center justify-between">
           <div className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-14 lg:w-48">
             <Image
-              src="/Logo_bogiVisual_Standard.png"
-              alt="Logo"
+              src="/bogivisual-logo-immobilien-visualisierung.webp"
+              alt="BogiVisual – Professionelle Immobilien Visualisierung"
               fill
               priority
               className="object-contain"
