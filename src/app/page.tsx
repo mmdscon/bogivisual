@@ -21,10 +21,10 @@ export default function Page() {
 
   const heroImages = useMemo(
     () => [
-      { src: "/bogi1.jpg", alt: "Hero Visual 01" },
-      { src: "/bogi2.jpg", alt: "Hero Visual 02" },
-      { src: "/bogi3.jpg", alt: "Hero Visual 03" },
-      { src: "/bogi4.jpg", alt: "Hero Visual 04" },
+      { src: "/immobilien-visualisierung-rendering-01.webp", alt: "3D Immobilien Visualisierung – Rendering 01 | BogiVisual" },
+      { src: "/immobilien-visualisierung-rendering-02.webp", alt: "3D Immobilien Visualisierung – Rendering 02 | BogiVisual" },
+      { src: "/immobilien-visualisierung-rendering-03.webp", alt: "3D Immobilien Visualisierung – Rendering 03 | BogiVisual" },
+      { src: "/immobilien-visualisierung-rendering-04.webp", alt: "3D Immobilien Visualisierung – Rendering 04 | BogiVisual" },
     ],
     []
   );
@@ -35,25 +35,25 @@ export default function Page() {
         title: "Emotion schlägt Erklärung",
         text: "Kaufentscheidungen werden visuell und emotional getroffen. Realistische Renderings schaffen sofortes Vertrauen und Begehrlichkeit.",
         icon: Heart,
-        img: { src: "/benefit1.jpg", alt: "Vorteil: Emotion" },
+        img: { src: "/immobilien-visualisierung-vorteil-emotion.webp", alt: "Emotion als Kaufentscheidung – 3D Immobilien Visualisierung" },
       },
       {
         title: "Höhere Wahrnehmung von Qualität",
         text: "Eine hochwertige Visualisierung positioniert Ihre Immobilie automatisch im Premium-Segment – noch bevor sie real existiert.",
         icon: Gem,
-        img: { src: "/benefit2.jpg", alt: "Vorteil: Premium" },
+        img: { src: "/immobilien-visualisierung-vorteil-premium.webp", alt: "Premium-Qualität durch hochwertige Immobilien Visualisierung" },
       },
       {
         title: "Schnellere Vermarktung",
         text: "Klare Bilder sorgen für Klarheit, reduzieren Rückfragen und beschleunigen Entscheidungsprozesse.",
         icon: Layers,
-        img: { src: "/benefit3.jpg", alt: "Vorteil: Geschwindigkeit" },
+        img: { src: "/immobilien-visualisierung-vorteil-geschwindigkeit.webp", alt: "Schnellere Vermarktung mit 3D Immobilien Renderings" },
       },
       {
         title: "Perfekt für Marketing & Vertrieb",
         text: "Ideal für Exposés, Websites, Social Media, Präsentationen und Investorenunterlagen.",
         icon: Camera,
-        img: { src: "/benefit4.jpg", alt: "Vorteil: Marketing" },
+        img: { src: "/immobilien-visualisierung-vorteil-marketing.webp", alt: "Immobilien Marketing mit professionellen 3D Visualisierungen" },
       },
     ],
     []
@@ -83,8 +83,8 @@ export default function Page() {
   const workImages = useMemo(
     () =>
       Array.from({ length: 12 }).map((_, i) => ({
-        src: `/${i + 1}.jpg`,
-        alt: `Meine Arbeit ${i + 1}`,
+        src: `/immobilien-rendering-portfolio-${String(i + 1).padStart(2, '0')}.webp`,
+        alt: `3D Immobilien Rendering Portfolio – Projekt ${i + 1} | BogiVisual`,
       })),
     []
   );
@@ -93,11 +93,11 @@ export default function Page() {
     () => [
       {
         id: "case-1",
-        primary: { src: "/primaer1.jpg", alt: "primaerbild 1" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-01.webp", alt: "3D Rendering Fallstudie 1 – Immobilien Visualisierung" },
         secondary: [
-          { src: "/sekundaer1.jpg", alt: "sekundaer 1" },
-          { src: "/sekundaer11.jpg", alt: "sekundaer 1.1" },
-          { src: "/sekundaer111.jpg", alt: "sekundaer 1.11" },
+          { src: "/immobilien-3d-rendering-fallstudie-01a.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering A" },
+          { src: "/immobilien-3d-rendering-fallstudie-01b.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering B" },
+          { src: "/immobilien-3d-rendering-fallstudie-01c.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering C" },
         ],
         meta: {
           project: "Projektbeschreibung",
@@ -113,11 +113,11 @@ export default function Page() {
       },
       {
         id: "case-2",
-        primary: { src: "/primaer2.jpg", alt: "primaerbild 2" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-02.webp", alt: "3D Rendering Fallstudie 2 – Immobilien Visualisierung" },
         secondary: [
-          { src: "/sekundaer2.jpg", alt: "sekundaer 2" },
-          { src: "/sekundaer22.jpg", alt: "sekundaer 2.2" },
-          { src: "/sekundaer222.jpg", alt: "sekundaer 2.22" },
+          { src: "/immobilien-3d-rendering-fallstudie-02a.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering A" },
+          { src: "/immobilien-3d-rendering-fallstudie-02b.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering B" },
+          { src: "/immobilien-3d-rendering-fallstudie-02c.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering C" },
         ],
         meta: {
           project: "Projektbeschreibung",
@@ -133,11 +133,11 @@ export default function Page() {
       },
       {
         id: "case-3",
-        primary: { src: "/primaer3.jpg", alt: "primaerbild 3" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-03.webp", alt: "3D Rendering Fallstudie 3 – Immobilien Visualisierung" },
         secondary: [
-          { src: "/sekundaer3.jpg", alt: "sekundaer 3" },
-          { src: "/sekundaer33.jpg", alt: "sekundaer 3.3" },
-          { src: "/sekundaer333.jpg", alt: "sekundaer 3.33" },
+          { src: "/immobilien-3d-rendering-fallstudie-03a.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering A" },
+          { src: "/immobilien-3d-rendering-fallstudie-03b.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering B" },
+          { src: "/immobilien-3d-rendering-fallstudie-03c.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering C" },
         ],
         meta: {
           project: "Projektbeschreibung",
@@ -158,19 +158,19 @@ export default function Page() {
   const beforeAfterItems = useMemo(
     () => [
       {
-        before: "/vorher1.jpg",
-        after: "/nachher1.jpg",
-        alt: "Vorher/Nachher 1",
+        before: "/immobilien-visualisierung-vorher-01.webp",
+        after: "/immobilien-visualisierung-nachher-01.webp",
+        alt: "Immobilien 3D Visualisierung: Vorher-Nachher Vergleich 1",
       },
       {
-        before: "/vorher2.jpg",
-        after: "/nachher2.jpg",
-        alt: "Vorher/Nachher 2",
+        before: "/immobilien-visualisierung-vorher-02.webp",
+        after: "/immobilien-visualisierung-nachher-02.webp",
+        alt: "Immobilien 3D Visualisierung: Vorher-Nachher Vergleich 2",
       },
       {
-        before: "/vorher3.jpg",
-        after: "/nachher3.jpg",
-        alt: "Vorher/Nachher 3",
+        before: "/immobilien-visualisierung-vorher-03.webp",
+        after: "/immobilien-visualisierung-nachher-03.webp",
+        alt: "Immobilien 3D Visualisierung: Vorher-Nachher Vergleich 3",
       },
     ],
     []
@@ -178,17 +178,17 @@ export default function Page() {
 
   const partnerLogos = useMemo(
     () => [
-      { src: "/bogiref1.jpg", alt: "Partner 1" },
-      { src: "/bogiref2.jpg", alt: "Partner 2" },
-      { src: "/bogiref3.jpg", alt: "Partner 3" },
-      { src: "/bogiref4.jpg", alt: "Partner 4" },
-      { src: "/bogiref5.jpg", alt: "Partner 5" },
-      { src: "/bogiref6.jpg", alt: "Partner 6" },
-      { src: "/bogiref7.jpg", alt: "Partner 7" },
-      { src: "/bogiref8.jpg", alt: "Partner 8" },
-      { src: "/bogiref9.jpg", alt: "Partner 9" },
-      { src: "/bogiref10.jpg", alt: "Partner 10" },
-      { src: "/bogiref11.jpg", alt: "Partner 11" },
+      { src: "/bogivisual-referenz-partner-01.webp", alt: "Referenz Partner 1 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-02.webp", alt: "Referenz Partner 2 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-03.webp", alt: "Referenz Partner 3 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-04.webp", alt: "Referenz Partner 4 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-05.webp", alt: "Referenz Partner 5 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-06.webp", alt: "Referenz Partner 6 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-07.webp", alt: "Referenz Partner 7 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-08.webp", alt: "Referenz Partner 8 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-09.webp", alt: "Referenz Partner 9 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-10.webp", alt: "Referenz Partner 10 – BogiVisual Immobilien Visualisierung" },
+      { src: "/bogivisual-referenz-partner-11.webp", alt: "Referenz Partner 11 – BogiVisual Immobilien Visualisierung" },
     ],
     []
   );
@@ -269,8 +269,8 @@ export default function Page() {
   <Link href="/" aria-label="Zur Startseite">
     <div className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-14 lg:w-48 cursor-pointer">
       <Image
-        src="/Logo_bogiVisual_Standard.png"
-        alt="Logo"
+        src="/bogivisual-logo-immobilien-visualisierung.webp"
+        alt="BogiVisual – Professionelle Immobilien Visualisierung"
         fill
         priority
         className="object-contain"
@@ -454,8 +454,8 @@ export default function Page() {
           <div className="rounded-[8px] border border-black/10 bg-white overflow-hidden h-full flex flex-col">
             <div className="relative w-full aspect-[5/4] overflow-hidden">
               <Image
-                src="/bogiportrait.jpg"
-                alt="Bogi Portrait"
+                src="/boglarka-czupifarkas-immobilien-visualisiererin.webp"
+                alt="Boglarka Czupifarkas – Immobilien Visualisiererin bei BogiVisual"
                 fill
                 sizes="(max-width: 1024px) 100vw, 520px"
                 className="object-cover object-top"

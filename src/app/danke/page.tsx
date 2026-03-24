@@ -12,8 +12,8 @@ export default function Page() {
         <div className="mx-auto max-w-6xl flex items-center justify-between">
           <div className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-14 lg:w-48">
             <Image
-              src="/Logo_bogiVisual_Standard.png"
-              alt="Logo"
+              src="/bogivisual-logo-immobilien-visualisierung.webp"
+              alt="BogiVisual – Professionelle Immobilien Visualisierung"
               fill
               priority
               className="object-contain"
@@ -66,10 +66,10 @@ export default function Page() {
 
           {/* Minimalistische Collage */}
           <div className="grid grid-cols-2 gap-4">
-            <CollageImage src="/bogi1.jpg" />
-            <CollageImage src="/bogi2.jpg" />
-            <CollageImage src="/bogi3.jpg" />
-            <CollageImage src="/bogi4.jpg" />
+            <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
+            <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
+            <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
+            <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
           </div>
         </div>
       </section>
@@ -82,7 +82,7 @@ function CollageImage({ src }: { src: string }) {
     <div className="relative aspect-[4/5] rounded-[8px] overflow-hidden border border-black/10 bg-white">
       <Image
         src={src}
-        alt="Visualisierung"
+        alt="3D Immobilien Visualisierung – BogiVisual Portfolio"
         fill
         sizes="(max-width: 1024px) 50vw, 400px"
         className="object-cover"
