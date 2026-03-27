@@ -420,9 +420,21 @@ export default function Page() {
             ))}
           </div>
 
-          {/* ✅ Mobile: Karussell (wie vorher) */}
-          <div className="mt-8 sm:hidden">
-            <BenefitCard slide={benefitSlides[slideIndex]} />
+          {/* ✅ Mobile: Karussell – feste Höhe durch überlagerte Slides */}
+          <div className="mt-8 sm:hidden relative">
+            {benefitSlides.map((s, i) => (
+              <div
+                key={s.title}
+                className={[
+                  "transition-opacity duration-500",
+                  i === 0 ? "" : "absolute inset-0",
+                  i === slideIndex ? "opacity-100" : "opacity-0 pointer-events-none",
+                ].join(" ")}
+                aria-hidden={i !== slideIndex}
+              >
+                <BenefitCard slide={s} />
+              </div>
+            ))}
           </div>
 
           {/* Mobile Dots bleiben */}
