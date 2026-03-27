@@ -93,62 +93,62 @@ export default function Page() {
     () => [
       {
         id: "case-1",
-        primary: { src: "/immobilien-3d-rendering-fallstudie-01.webp", alt: "3D Rendering Fallstudie 1 – Immobilien Visualisierung" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-01.webp", alt: "Grand Elisabeth Bad Ischl – 3D Hotelzimmer Visualisierung" },
         secondary: [
-          { src: "/immobilien-3d-rendering-fallstudie-01a.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering A" },
-          { src: "/immobilien-3d-rendering-fallstudie-01b.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering B" },
-          { src: "/immobilien-3d-rendering-fallstudie-01c.webp", alt: "Detailansicht Fallstudie 1 – 3D Immobilien Rendering C" },
+          { src: "/immobilien-3d-rendering-fallstudie-01a.webp", alt: "Grand Elisabeth Bad Ischl – Innenraum Rendering A" },
+          { src: "/immobilien-3d-rendering-fallstudie-01b.webp", alt: "Grand Elisabeth Bad Ischl – Innenraum Rendering B" },
+          { src: "/immobilien-3d-rendering-fallstudie-01c.webp", alt: "Grand Elisabeth Bad Ischl – Innenraum Rendering C" },
         ],
         meta: {
-          project: "Projektbeschreibung",
+          project: "Grand Elisabeth, Bad Ischl",
           projectText:
-            "Kurzbeschreibung des Projekts (Lage, Zielgruppe, Tonalität, Stil).",
+            "Hochwertige Entscheidungs-Visualisierungen für Bauherren und Architekten. Mehrere Entwurfsphasen ermöglichten es, Möbel-, Farb- und Materialkonzepte realitätsnah zu prüfen und zu optimieren – lange vor Umsetzungsbeginn.",
           situation: "Ist-Situation",
           situationText:
-            "Ausgangslage, Herausforderungen, Informationsstand (Pläne, Materialien, Constraints).",
-          result: "Erstellte Visualisierung",
+            "Das Hotel wurde im April 2025 eröffnet und überzeugt seitdem mit überwiegend sehr positiven Gästebewertungen – insbesondere in den Bereichen Design, Atmosphäre und Komfort.",
+          result: "Vorteil für den Kunden",
           resultText:
-            "Welche Motive/Ansichten entstanden sind und welche Wirkung damit erzielt wird (Premium, Vertrauen, Verkauf/Marketing).",
+            "Der Bauherr konnte sämtliche Details frühzeitig ansehen und anpassen – bevor verbindliche Investitionen erfolgten. Gleichzeitig startete der Vertrieb der Hotelzimmer bereits Monate vor der Fertigstellung.",
         },
       },
       {
         id: "case-2",
-        primary: { src: "/immobilien-3d-rendering-fallstudie-02.webp", alt: "3D Rendering Fallstudie 2 – Immobilien Visualisierung" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-02.webp", alt: "Architektenhaus Ottnang am Hausruck – 3D Immobilien Visualisierung" },
         secondary: [
-          { src: "/immobilien-3d-rendering-fallstudie-02a.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering A" },
-          { src: "/immobilien-3d-rendering-fallstudie-02b.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering B" },
-          { src: "/immobilien-3d-rendering-fallstudie-02c.webp", alt: "Detailansicht Fallstudie 2 – 3D Immobilien Rendering C" },
+          { src: "/immobilien-3d-rendering-fallstudie-02a.webp", alt: "Architektenhaus Ottnang – Rendering Außenansicht A" },
+          { src: "/immobilien-3d-rendering-fallstudie-02b.webp", alt: "Architektenhaus Ottnang – Rendering Innenansicht B" },
+          { src: "/immobilien-3d-rendering-fallstudie-02c.webp", alt: "Architektenhaus Ottnang – Rendering Detailansicht C" },
         ],
         meta: {
-          project: "Projektbeschreibung",
+          project: "Architektenhaus, Ottnang am Hausruck",
           projectText:
-            "Kurzbeschreibung des Projekts (Lage, Zielgruppe, Tonalität, Stil).",
+            "Ein hochwertiges Architektenhaus, das bereits vor der Fertigstellung erfolgreich verkauft werden konnte. Ausschlaggebend waren realitätsnahe und atmosphärische Visualisierungen, die das Projekt für Interessenten greifbar machten.",
           situation: "Ist-Situation",
           situationText:
-            "Ausgangslage, Herausforderungen, Informationsstand (Pläne, Materialien, Constraints).",
-          result: "Erstellte Visualisierung",
+            "Dank der aussagekräftigen Bildwelten konnte das Haus rasch und zur vollsten Zufriedenheit des Käufers sowie des Immobilienbüros verkauft werden.",
+          result: "Vorteil für den Kunden",
           resultText:
-            "Welche Motive/Ansichten entstanden sind und welche Wirkung damit erzielt wird (Premium, Vertrauen, Verkauf/Marketing).",
+            "Das Immobilienbüro konnte das Haus bereits vor Fertigstellung erfolgreich verkaufen – ein klarer Vorteil für Planungssicherheit, Vermarktungsgeschwindigkeit und Kundenzufriedenheit.",
         },
       },
       {
         id: "case-3",
-        primary: { src: "/immobilien-3d-rendering-fallstudie-03.webp", alt: "3D Rendering Fallstudie 3 – Immobilien Visualisierung" },
+        primary: { src: "/immobilien-3d-rendering-fallstudie-03.webp", alt: "Chaletdorf Grünau im Almtal – 3D Visualisierung Touristikprojekt" },
         secondary: [
-          { src: "/immobilien-3d-rendering-fallstudie-03a.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering A" },
-          { src: "/immobilien-3d-rendering-fallstudie-03b.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering B" },
-          { src: "/immobilien-3d-rendering-fallstudie-03c.webp", alt: "Detailansicht Fallstudie 3 – 3D Immobilien Rendering C" },
+          { src: "/immobilien-3d-rendering-fallstudie-03a.webp", alt: "Chaletdorf Grünau – Rendering Chalet-Typ A" },
+          { src: "/immobilien-3d-rendering-fallstudie-03b.webp", alt: "Chaletdorf Grünau – Rendering Chalet-Typ B" },
+          { src: "/immobilien-3d-rendering-fallstudie-03c.webp", alt: "Chaletdorf Grünau – Rendering Areal-Übersicht C" },
         ],
         meta: {
-          project: "Projektbeschreibung",
+          project: "Chaletdorf, Grünau im Almtal",
           projectText:
-            "Kurzbeschreibung des Projekts (Lage, Zielgruppe, Tonalität, Stil).",
-          situation: "Ist-Situation",
+            "Ein neues touristisches Leitprojekt: 18 Chalets in drei Varianten, das Natururlaub für Familien und Erholungssuchende auf ein neues Niveau hebt. Das Projekt befindet sich derzeit in der Planungsphase.",
+          situation: "Erstellte Visualisierungen",
           situationText:
-            "Ausgangslage, Herausforderungen, Informationsstand (Pläne, Materialien, Constraints).",
-          result: "Erstellte Visualisierung",
+            "Die Visualisierungen zeigen Lage, Proportionen und Zusammenspiel der drei Haustypen und vermitteln bereits früh ein realistisches Bild des zukünftigen Chaletdorfs im Almtal.",
+          result: "Vorteil für den Kunden",
           resultText:
-            "Welche Motive/Ansichten entstanden sind und welche Wirkung damit erzielt wird (Premium, Vertrauen, Verkauf/Marketing).",
+            "Die Visualisierungen bilden die Grundlage für hochwertige Exposé- und Vermarktungsunterlagen und unterstützen zukünftige Käufer dabei, sich frühzeitig ein klares Bild vom Projekt zu machen.",
         },
       },
     ],
