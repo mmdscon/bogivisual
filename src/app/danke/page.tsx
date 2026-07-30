@@ -92,6 +92,16 @@ export default function Page() {
                   Zur Startseite
                 </Link>
               </div>
+
+              {/* Calendly Embed */}
+              <div className="mt-10 rounded-[8px] border border-black/10 bg-white overflow-hidden">
+                <div
+                  ref={widgetRef}
+                  className="calendly-inline-widget"
+                  data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=000000`}
+                  style={{ minWidth: "320px", height: "700px" }}
+                />
+              </div>
             </div>
 
             {/* Minimalistische Collage – bleibt auf Desktop rechts */}
@@ -101,16 +111,6 @@ export default function Page() {
               <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
               <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
             </div>
-          </div>
-
-          {/* Calendly Embed */}
-          <div className="mt-14 rounded-[8px] border border-black/10 bg-white overflow-hidden">
-            <div
-              ref={widgetRef}
-              className="calendly-inline-widget"
-              data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=000000`}
-              style={{ minWidth: "320px", height: "700px" }}
-            />
           </div>
         </div>
       </section>
