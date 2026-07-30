@@ -8,7 +8,7 @@ type MetaPixelProps = {
 };
 
 export default function MetaPixel({
-  pixelId = '2396497034130066', // Default auf deine feste Pixel-ID
+  pixelId = '137791708264202', // Default auf deine feste Pixel-ID
 }: MetaPixelProps) {
   // Falls jemand bewusst eine leere ID übergibt, rendere nichts
   if (!pixelId) return null;

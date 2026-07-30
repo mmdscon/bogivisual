@@ -1,8 +1,8 @@
 // fonts.ts
-import localFont from 'next/font/local';
+import { Source_Sans_3 } from 'next/font/google';
 
-export const inter = localFont({
-  src: '../../public/fonts/Helvetica.ttf', // Pfad zu deiner Datei
+export const inter = Source_Sans_3({
+  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter', // Wir behalten den Namen bei, damit dein CSS weiter funktioniert
+  variable: '--font-inter', // Mapping bleibt identisch
 });

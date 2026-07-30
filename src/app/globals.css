@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* ===== Design Tokens ===== */
-:root{
-  /* Hintergrund & Text */
-  --bg:#F1ECEA;
-  --fg:#202529;
-  --muted:#6b7280; /* kannst du bei Bedarf noch in ein wärmeres Grau ändern */
+:root {
+  /* Hintergrund & Text (angepasst auf FFF6A7 und 000000E6) */
+  --bg: #FFF6A7;
+  --fg: rgba(0, 0, 0, 0.9); /* entspricht #000000E6 */
+  --muted: #4b5563; 
 
-  /* Akzentfarbe (ehemals Blau / Rot) */
-  --brand-blue:#D6B8A9;        /* Akzent (Sektionen, Karten) */
-  --brand-blue-dark:#D6B8A9;   /* Akzent für Hero + Buttons */
-  --brand-red:#D6B8A9;         /* falls irgendwo Rot genutzt wurde, jetzt auch Akzent */
+  /* Akzentfarbe - Hier habe ich ein satteres Gold/Ocker gewählt, 
+     damit sich Buttons vom hellgelben Hintergrund abheben */
+  --brand-blue: #E5D270;        
+  --brand-blue-dark: #D4BD45;   /* Hauptfarbe für Buttons/Hero */
+  --brand-red: #D4BD45;         
 
   /* Karten */
-  --card:#ffffff;
-  --card-border:#E0D6D0;
+  --card: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
 }
 
 @keyframes marquee {
@@ -28,84 +28,76 @@
   animation: marquee var(--speed, 20s) linear infinite;
 }
 
-html{ scroll-behavior:smooth; }
-*{ box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  line-height:1.5;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
 /* ===== Layout Helpers ===== */
-.container{ width:100%; max-width:1120px; margin:0 auto; padding:0 16px; }
-.section{ padding: clamp(40px, 6vw, 96px) 0; }
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.section { padding: clamp(40px, 6vw, 96px) 0; }
 
-/* Hero – jetzt mit Akzentfarbe statt Dunkelblau */
-.hero-band{
+/* Hero – Nutzt jetzt den dunkleren Goldton für Lesbarkeit auf Gelb */
+.hero-band {
   background: var(--brand-blue-dark);
-  color:#fff;
+  color: #000; /* Text auf Gold/Gelb besser in Schwarz */
 }
 
-/* Quiz überlappt Hero-Bild – jetzt etwas stärker */
-.quiz-wrap{ position:relative; z-index:2; margin-top:-96px; }
-@media (max-width:640px){ .quiz-wrap{ margin-top:-72px; } }
+/* Quiz überlappt Hero-Bild */
+.quiz-wrap { position: relative; z-index: 2; margin-top: -96px; }
+@media (max-width: 640px) { .quiz-wrap { margin-top: -72px; } }
 
 /* Karten */
-.card{
-  background:var(--card);
-  border:1px solid var(--card-border);
-  border-radius:16px;
-  padding:18px;
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 /* Einheitliche Marken-Buttons */
-.btn-brand{
-  background: var(--brand-blue-dark) !important;
-  color:#fff !important;
-  border-color: var(--brand-blue-dark) !important;
+.btn-brand {
+  background: #000 !important; /* Schwarze Buttons sehen auf Gelb sehr modern aus */
+  color: #FFF6A7 !important;   /* Text in der Hintergrundfarbe */
+  border-color: #000 !important;
 }
-.btn-brand:hover{ filter:brightness(1.05); }
+.btn-brand:hover { 
+  filter: brightness(1.2); 
+  transform: translateY(-1px);
+}
 
-/* Marquee (endetlos) */
-.marquee{ overflow:hidden; position:relative; }
-.marquee__mask{
+/* Marquee */
+.marquee { overflow: hidden; position: relative; }
+.marquee__mask {
   -webkit-mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
           mask-image: linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent);
 }
-.marquee__track{
-  display:flex;
-  gap:48px;
-  padding:12px 0;
-  white-space:nowrap;
-  will-change:transform;
-  animation:marquee 24s linear infinite;
-  color:#111827; 
-  font-weight:700; 
-  letter-spacing:.2px;
-}
-@keyframes marquee{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
+.marquee__track {
+  display: flex;
+  gap: 48px;
+  padding: 12px 0;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 24s linear infinite;
+  color: var(--fg); 
+  font-weight: 700; 
+  letter-spacing: .2px;
 }
 
-/* Garantie – Bildplatzhalter mit warmem Verlauf */
-.guarantee-img{
-  aspect-ratio:16/9;
-  border-radius:16px;
-  border:1px solid var(--card-border);
-  background: linear-gradient(180deg,#f7f3f1 0%, #e5d2c8 100%);
-  box-shadow: 0 10px 30px rgba(17,24,39,.08);
-}
-
-/* Hero-Image ebenfalls in warmen Tönen */
-.hero__image{
-  min-height:260px;
-  border-radius:16px;
-  border:1px solid var(--card-border);
-  background: linear-gradient(180deg, #f7f3f1 0%, #e5d2c8 100%);
+/* Garantie & Hero-Bild Platzhalter (angepasst an das neue Gelb-Schema) */
+.guarantee-img, .hero__image {
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: linear-gradient(180deg, #FFFCE0 0%, #F5E98E 100%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }

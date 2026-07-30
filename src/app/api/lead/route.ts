@@ -1,30 +1,26 @@
 // app/api/lead/route.ts
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = "nodejs";
-export const dynamic = "force-dynamic";
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 type Lead = {
-  // Quiz-Felder
-  presentationReady?: "Ja" | "Noch unsicher" | string;
-  assetType?: string;
-
-  // Kontakt
+  option?: string;
+  timeframe?: string;
+  bundesland?: string;
   name?: string;
   email?: string;
   phone?: string;
-
-  // Bot-Schutz
   hp?: string; // optionales Honeypot-Feld
 };
 
-const WEBHOOK = "https://hook.eu2.make.com/qpubqmscp986q42jvcqrtpgauj0uoppv";
+const WEBHOOK = 'https://hook.eu2.make.com/jf6hanue6scx2ms3lf34gaid2ldwlhwh';
 
 function isValidEmail(e: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
 }
-function sanitize(s: unknown, max = 500) {
-  return String(s ?? "").trim().slice(0, max);
+function sanitize(s: unknown) {
+  return String(s ?? '').trim().slice(0, 500);
 }
 
 export async function POST(req: NextRequest) {
@@ -32,35 +28,29 @@ export async function POST(req: NextRequest) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ ok: false, error: "invalid_json" }, { status: 400 });
+    return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 });
   }
 
-  // Honeypot: wenn gesetzt -> Bot
   if (body.hp) {
-    // 204 sollte eigentlich keinen Body haben – wir geben trotzdem ok zurück, aber ohne Content.
-    return new NextResponse(null, { status: 204 });
+    return NextResponse.json({ ok: true, forwarded: false, bot: true }, { status: 204 });
   }
 
-  // Lead-Payload (sanitized)
+  // Lead-Payload
   const payload: Lead = {
-    presentationReady: sanitize(body.presentationReady, 50),
-    assetType: sanitize(body.assetType, 120),
-    name: sanitize(body.name, 120),
-    email: sanitize(body.email, 180),
-    phone: sanitize(body.phone, 80),
+    option: sanitize(body.option),
+    timeframe: sanitize(body.timeframe),
+    bundesland: sanitize(body.bundesland),
+    name: sanitize(body.name),
+    email: sanitize(body.email),
+    phone: sanitize(body.phone),
   };
 
-  // Validation
-  if (!payload.name || !payload.email || !payload.phone || !isValidEmail(payload.email)) {
+  if (!payload.name || !payload.email || !isValidEmail(payload.email)) {
     return NextResponse.json(
       {
         ok: false,
-        error: "validation",
-        fields: {
-          name: !!payload.name,
-          email: isValidEmail(payload.email || ""),
-          phone: !!payload.phone,
-        },
+        error: 'validation',
+        fields: { name: !!payload.name, email: isValidEmail(payload.email || '') },
       },
       { status: 400 }
     );
@@ -69,14 +59,14 @@ export async function POST(req: NextRequest) {
   // 🔎 UTM-Parameter einsammeln (Query + Referer als Fallback)
   const sp = req.nextUrl?.searchParams;
   const getUtm = (key: string) => sanitize(sp?.get(key));
-  let utm_campaign = getUtm("utm_campaign");
+  let utm_campaign = getUtm('utm_campaign');
 
   if (!utm_campaign) {
-    const ref = req.headers.get("referer");
+    const ref = req.headers.get('referer');
     try {
       if (ref) {
         const refParams = new URL(ref).searchParams;
-        utm_campaign = sanitize(refParams.get("utm_campaign"));
+        utm_campaign = sanitize(refParams.get('utm_campaign'));
       }
     } catch {
       // ignore invalid referer
@@ -84,18 +74,16 @@ export async function POST(req: NextRequest) {
   }
 
   const utm = {
-    source: getUtm("utm_source") || undefined,
-    medium: getUtm("utm_medium") || undefined,
-    campaign: utm_campaign || undefined,
-    term: getUtm("utm_term") || undefined,
-    content: getUtm("utm_content") || undefined,
+    source: getUtm('utm_source') || undefined,
+    medium: getUtm('utm_medium') || undefined,
+    campaign: utm_campaign || undefined, // 👈 wichtig
+    term: getUtm('utm_term') || undefined,
+    content: getUtm('utm_content') || undefined,
   };
 
-  // Timeout handling (10s)
   let controller: AbortController | undefined;
   let signal: AbortSignal | undefined;
-
-  if (typeof (AbortSignal as any).timeout === "function") {
+  if (typeof (AbortSignal as any).timeout === 'function') {
     signal = (AbortSignal as any).timeout(10_000);
   } else {
     controller = new AbortController();
@@ -105,16 +93,16 @@ export async function POST(req: NextRequest) {
 
   try {
     const res = await fetch(WEBHOOK, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        source: "next-quiz",
-        ...payload,
+        source: 'next-quiz',
+        ...payload, // timeframe ist hier automatisch dabei
         meta: {
-          ua: req.headers.get("user-agent") ?? undefined,
-          ip: req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? undefined,
+          ua: req.headers.get('user-agent') ?? undefined,
+          ip: req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? undefined,
           ts: new Date().toISOString(),
-          utm,
+          utm, // 👈 enthält u.a. utm.campaign
         },
       }),
       signal,
@@ -123,7 +111,7 @@ export async function POST(req: NextRequest) {
     const ok = res.ok;
     return NextResponse.json({ ok, forwarded: true }, { status: ok ? 200 : 502 });
   } catch (e) {
-    console.error("Webhook-Error", e);
+    console.error('Webhook-Error', e);
     return NextResponse.json({ ok: false, forwarded: false }, { status: 502 });
   }
 }
