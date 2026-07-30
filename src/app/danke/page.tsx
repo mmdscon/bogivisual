@@ -93,23 +93,23 @@ export default function Page() {
                 </Link>
               </div>
 
-              {/* Calendly Embed */}
-              <div className="mt-10 rounded-[8px] border border-black/10 bg-white overflow-hidden">
-                <div
-                  ref={widgetRef}
-                  className="calendly-inline-widget"
-                  data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=000000`}
-                  style={{ minWidth: "320px", height: "700px" }}
-                />
+              {/* Minimalistische Collage */}
+              <div className="mt-10 grid grid-cols-2 gap-4 max-w-md">
+                <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
+                <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
+                <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
+                <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
               </div>
             </div>
 
-            {/* Minimalistische Collage – bleibt auf Desktop rechts */}
-            <div className="grid grid-cols-2 gap-4">
-              <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
+            {/* Calendly Embed */}
+            <div className="rounded-[8px] border border-black/10 bg-white overflow-hidden">
+              <div
+                ref={widgetRef}
+                className="calendly-inline-widget"
+                data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=000000`}
+                style={{ minWidth: "320px", height: "700px" }}
+              />
             </div>
           </div>
         </div>
