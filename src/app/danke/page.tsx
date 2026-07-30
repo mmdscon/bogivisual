@@ -103,14 +103,6 @@ export default function Page() {
                 style={{ minWidth: "320px", height: "700px" }}
               />
             </div>
-
-            {/* Minimalistische Collage – auf Mobile ganz unten, auf Desktop links unter den Buttons */}
-            <div className="grid grid-cols-2 gap-4 max-w-md">
-              <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
-              <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
-            </div>
           </div>
         </div>
       </section>
@@ -123,16 +115,3 @@ export default function Page() {
   );
 }
 
-function CollageImage({ src }: { src: string }) {
-  return (
-    <div className="relative aspect-[4/5] rounded-[8px] overflow-hidden border border-black/10 bg-white">
-      <Image
-        src={src}
-        alt="3D Immobilien Visualisierung – BogiVisual Portfolio"
-        fill
-        sizes="(max-width: 1024px) 50vw, 400px"
-        className="object-cover"
-      />
-    </div>
-  );
-}
