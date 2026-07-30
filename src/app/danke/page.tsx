@@ -92,17 +92,9 @@ export default function Page() {
                   Zur Startseite
                 </Link>
               </div>
-
-              {/* Minimalistische Collage */}
-              <div className="mt-10 grid grid-cols-2 gap-4 max-w-md">
-                <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
-                <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
-                <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
-                <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
-              </div>
             </div>
 
-            {/* Calendly Embed */}
+            {/* Calendly Embed – auf Mobile direkt nach den Buttons, auf Desktop rechts */}
             <div className="rounded-[8px] border border-black/10 bg-white overflow-hidden">
               <div
                 ref={widgetRef}
@@ -110,6 +102,14 @@ export default function Page() {
                 data-url={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=000000`}
                 style={{ minWidth: "320px", height: "700px" }}
               />
+            </div>
+
+            {/* Minimalistische Collage – auf Mobile ganz unten, auf Desktop links unter den Buttons */}
+            <div className="grid grid-cols-2 gap-4 max-w-md">
+              <CollageImage src="/immobilien-visualisierung-rendering-01.webp" />
+              <CollageImage src="/immobilien-visualisierung-rendering-02.webp" />
+              <CollageImage src="/immobilien-visualisierung-rendering-03.webp" />
+              <CollageImage src="/immobilien-visualisierung-rendering-04.webp" />
             </div>
           </div>
         </div>
